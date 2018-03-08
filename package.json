@@ -5,14 +5,12 @@
 	"bin": {
 		"stout-linux": "release/stout-linux",
 		"stout-osx": "release/stout-osx",
-		"stout-windows": "release/stout-windows.exe"
+		"stout-windows": "release/stout-windows.exe",
+		"stout": "stout"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:balupton/cloudflare-stout-npm.git"
-	},
-	"scripts": {
-		"update": "./update"
 	},
 	"author": "Benjamin Lupton <b@lupton.cc> (https://balupton.com)",
 	"license": "Unlicense"

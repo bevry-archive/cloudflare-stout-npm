@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+if test "$(uname -s)" = "Linux"; then
+	./release/stout-linux "$@"
+elif test "$(uname -s)" = "Darwin"; then
+	./release/stout-osx "$@"
+else
+	./release/stout-windows.exe "$@"
+fi

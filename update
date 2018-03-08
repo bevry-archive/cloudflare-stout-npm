@@ -7,17 +7,21 @@ mkdir ./release
 data="$(curl -s https://api.github.com/repos/cloudflare/Stout/releases/latest)"
 version="$(echo "$data" | jq --raw-output '.tag_name' | sed 's/^v//')"
 
-echo "updating package version to $version..."
-
-npm version "$version"
 
 echo "downloading files from release $version..."
 
 pushd ./release
 echo "$data" | jq --raw-output '.assets[] | .browser_download_url' | xargs -t -L 1 wget
+chmod +x ./*
 popd
 
 ls ./release
+
+
+echo "updating package version to $version..."
+
+npm version "$version"
+
 
 echo "publishing new version to npm..."
 
