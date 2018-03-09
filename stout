@@ -5,7 +5,19 @@ set -e
 # otherwise it could be the cwd of the user, or node_modules/bin
 # requires coreutils on mac: brew install coreutils
 # https://stackoverflow.com/q/3349105/130638
-cd "$(dirname "$(greadlink -f "$0")")"
+function rlink {
+	if test -n "$(which realpath)"; then
+		realpath "$@"
+	elif test -n "$(which greadlink)"; then
+		greadlink -f "$0"
+	elif test -n "$(which readlink)"; then
+		readlink -f "$0"
+	else
+		echo "missing either: realpath, greadlink, readlink"
+		exit 1
+	fi
+}
+cd "$(dirname "$(rlink "$0")")"
 
 # determine platform and run the command on it
 if test "$(uname -s)" = "Linux"; then

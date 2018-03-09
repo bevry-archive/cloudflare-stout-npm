@@ -1,7 +1,7 @@
 {
 	"name": "cloudflare-stout",
 	"tag": "latest",
-	"version": "1.3.1-4",
+	"version": "1.3.1-5",
 	"description": "mirrors cloudflare stout releases to npm",
 	"bin": {
 		"stout-linux": "release/stout-linux",
