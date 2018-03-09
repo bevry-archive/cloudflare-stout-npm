@@ -7,7 +7,7 @@ set -e
 # https://stackoverflow.com/q/3349105/130638
 function rlink {
 	if test -n "$(which realpath)"; then
-		realpath "$@"
+		realpath "$0"
 	elif test -n "$(which greadlink)"; then
 		greadlink -f "$0"
 	elif test -n "$(which readlink)"; then
