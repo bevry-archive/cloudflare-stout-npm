@@ -17,13 +17,22 @@ function rlink {
 		exit 1
 	fi
 }
-cd "$(dirname "$(rlink "$0")")"
+path="$(dirname "$(rlink "$0")")"
 
-# determine platform and run the command on it
+# determine platform and its executable
 if test "$(uname -s)" = "Linux"; then
-	./release/stout-linux "$@"
+	bin="stout-linux"
 elif test "$(uname -s)" = "Darwin"; then
-	./release/stout-osx "$@"
+	bin="stout-osx"
 else
-	./release/stout-windows.exe "$@"
+	bin="stout-windows.exe"
+fi
+
+# determine if we have env vars defined
+# if so, run the executable with the env vars
+# if not, run it normally
+if test -n "$ACCESS_KEY_ID" -a -n "$ACCESS_KEY_SECRET"; then
+	"$path/release/$bin" "$@" --key "$ACCESS_KEY_ID" --secret "$ACCESS_KEY_SECRET"
+else
+	"$path/release/$bin" "$@"
 fi
