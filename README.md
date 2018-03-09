@@ -6,7 +6,7 @@
 mirrors cloudflare stout releases to npm, such that you can do:
 
 ```
-npm install --save cloudflare-stout@1.3.1
+npm install --save cloudflare-stout
 npx stout-linux
 npx stout-osx
 npx stout-windows
@@ -16,7 +16,7 @@ npx stout  # runs the appropriate executable for your platform
 and
 
 ```
-npm install --global cloudflare-stout@1.3.1
+npm install --global cloudflare-stout
 stout-linux
 stout-osx
 stout-windows
