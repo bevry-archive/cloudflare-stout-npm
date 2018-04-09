@@ -3,7 +3,7 @@
 - repo: https://github.com/balupton/cloudflare-stout-npm
 - npm: http://npmjs.com/package/cloudflare-stout
 
-mirrors cloudflare stout releases to npm, such that you can do:
+mirrors [cloudflare stout](https://github.com/cloudflare/stout) releases to npm, such that you can do:
 
 ```
 npm install --save cloudflare-stout
