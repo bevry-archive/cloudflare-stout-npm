@@ -21,12 +21,24 @@ ls ./release
 
 echo "updating package version to $version..."
 
-npm version "$version"
+npm version --allow-same-version "$version"
+
+echo "committing and tagging with git..."
+
+git add -u
+git commit -m "updated stout to v$version"
+git tag "v$version"
 
 
 echo "publishing new version to npm..."
 
 npm publish
+
+
+echo "publishing new version to git..."
+
+git push origin master
+git push origin --tags
 
 
 echo "all done"
