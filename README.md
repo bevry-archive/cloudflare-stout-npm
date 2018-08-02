@@ -1,9 +1,6 @@
 # cloudflare stout on npm
 
-- repo: https://github.com/balupton/cloudflare-stout-npm
-- npm: http://npmjs.com/package/cloudflare-stout
-
-mirrors [cloudflare stout](https://github.com/cloudflare/stout) releases to npm, such that you can do
+mirrors [cloudflare stout](https://github.com/cloudflare/stout) releases [to npm](http://npmjs.com/package/cloudflare-stout), such that you can do
 
 this for local installations of stout:
 
