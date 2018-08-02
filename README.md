@@ -28,6 +28,6 @@ stout
 the `stout` executable is a bash script that will:
 
 - determine your platform and use the appropriate executable for it
-- determine if env vars "$ACCESS_KEY_ID" "$ACCESS_KEY_SECRET" are set, and if so, use their values for the --key and --secret arguments
+- determine if env vars `ACCESS_KEY_ID` `ACCESS_KEY_SECRET` are set, and if so, use their values for the `--key` and `--secret` arguments
 
 for when stout releases a new version, just post a new issue, and I'll run the `./update` script
